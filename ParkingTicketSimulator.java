@@ -3,7 +3,7 @@ public class ParkingTicketSimulator {
   public static void main(String[] args) {
     // Create a parked car object
     ParkedCar car = new ParkedCar("Honda", "Civic", "Black", 2022, "ABC123", 60);
-    System.out.println("Parked Car Info:");
+    System.out.println("Parked Car Info");
     System.out.println("Make: " + car.getMake());
     System.out.println("Model: " + car.getModel());
     System.out.println("Color: " + car.getColor());
@@ -13,19 +13,19 @@ public class ParkingTicketSimulator {
 
     // Create a parking meter object
     ParkingMeter meter = new ParkingMeter(120);
-    System.out.println("\nParking Meter Info:");
+    System.out.println("\nParking Meter Info");
     System.out.println("Minutes Purchased: " + meter.getpMinutes());
 
     // Create a police officer object
     PoliceOfficer officer = new PoliceOfficer("Joseph Weathers", "12345");
-    System.out.println("\nPolice Officer Info:");
+    System.out.println("\nPolice Officer Info");
     System.out.println("Name: " + officer.getName());
     System.out.println("Badge Number: " + officer.getBadge());
 
     // Check if car is parked illegally
     ParkingTicket ticket = officer.issueParkingTicket(car, meter);
     if (ticket != null) {
-      System.out.println("\nParking Ticket Issued:");
+      System.out.println("\nParking Ticket Issued");
       System.out.println("Fine: $" + ticket.ticket());
       System.out.println("Reason: " + ticket.getReason());
       System.out.println("Officer Name: " + ticket.getOfficer().getName());
