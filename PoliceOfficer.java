@@ -1,50 +1,50 @@
-public class PoliceOfficer {
 
-    String name, badge;
 
-    public PoliceOfficer() {
+public class ParkingTicket {
+
+
+    private ParkedCar car;
+    private PoliceOfficer officer;
+    private ParkingMeter parkingMeter;
+    double fine;
+
+    public ParkingTicket() {
 
     }
-    public PoliceOfficer(String name, String badge) {
-        this.name = name;
-        this.badge = badge;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getBadge() {
-        return badge;
-    }
-    public void setBadge(String badge) {
-        this.badge = badge;
-    }
-    public boolean checkCar(ParkedCar car, ParkingMeter minutes) {
-        if (car.getMinutesParked() > minutes.getpMinutes()) {
-            return true;
-        }
-        else {
-            return false;
-        }
+    public ParkingTicket(ParkedCar car, PoliceOfficer officer, ParkingMeter parkingMeter, double fine) {
+        this.car = car;
+        this.officer = officer;
+        this.parkingMeter = parkingMeter;
+        this.fine = fine;
+
     }
 
-    public ParkingTicket createTicket(ParkedCar car, ParkingMeter minutes) {
-        ParkingTicket ticket = new ParkingTicket(car, this, minutes);
-        int MinutesLeft = car.getMinutesParked() - minutes.getpMinutes();
+    public ParkedCar getCar() {
+        return car;
+    }
+    public void setCar(ParkedCar car) {
+        this.car = car;
+    }
+    public PoliceOfficer getOfficer() {
+        return officer;
+    }
+    public void setOfficer(PoliceOfficer officer) {
+        this.officer = officer;
+    }
+    public ParkingMeter getParkingMeter() {
+        return parkingMeter;
+    }
+    public void setParkingMeter(ParkingMeter parkingMeter) {
+        this.parkingMeter = parkingMeter;
+    }
+    public void setFine(double fine){
+        this.fine = fine;
+    }
+    public double getfine(){
+        return fine;
+    }
+    
 
-        if (checkCar(car, minutes) == true) {
-            if (MinutesLeft <= 60) {
-                ticket.ticket = 25;
-            } else {
-                ticket.ticket = 25 + (10 * (MinutesLeft / 60));
-            }
-        }
-        return ticket;
-    }
-    public ParkingTicket issueParkingTicket(ParkedCar car, ParkingMeter meter) {
-        System.out.println("Ticket has been issued.");
-        return null;
-    }
+
+
 }
